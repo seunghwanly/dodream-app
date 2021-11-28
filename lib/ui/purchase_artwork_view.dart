@@ -114,7 +114,7 @@ class PurchaseArtworkView extends GetView<RetrieveAndPurchaseController> {
                                             // TODO hard-coded here
                                             acno: "3020000005444");
                                     if (res) {
-                                      return Get.offNamed('/purchasecomplete');
+                                      return Get.offNamed('/purchasecomplete')!.then((value) => controller.refreshCurrentBalance());
                                     } else {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(const SnackBar(
